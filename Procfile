@@ -1,1 +1,1 @@
-web: gunicorn cturner.wsgi
+web: python manage.py runserver
