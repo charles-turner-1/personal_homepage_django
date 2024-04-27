@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="flex justify-center items-center h-screen">
+    <div class="text-center mb-64">
+        <h1 class="text-xl font-bold py-2">Thank you for contacting me!</h1>
+        <p class="text-lg pt-2 pb-8">I'll get back to you as soon as possible.</p>
+        <a href="{% url 'pages:home' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Go to Home
+        </a>
+    <div>
+</div>
+
+{% endblock %}

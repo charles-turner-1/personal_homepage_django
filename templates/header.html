@@ -1,0 +1,14 @@
+{% block content %}
+{% comment %} 
+Iterate through the list of all our available pages
+and display them in the navigation bar
+{% endcomment %}
+
+ <a href={% url 'pages:home' %}>Home</a>
+ <a href={% url 'pages:about' %}>About </a>
+ <a href={% url 'pages:services' %}>Services</a>
+ <a href={% url 'pages:contact' %}>Contact</a>
+
+{% comment %}
+
+{% endblock %}

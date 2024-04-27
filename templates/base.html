@@ -1,0 +1,61 @@
+{% load static %}
+{% load static tailwind_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Turner</title>
+    <!-- Add your CSS files here -->
+    <link rel="stylesheet" href="{% static 'your_app/css/style.css' %}">
+    {% tailwind_css %}
+
+    <script> 
+    import Alpine from 'alpinejs';
+ 
+    window.Alpine = Alpine;
+     
+    Alpine.start();
+    </script>
+
+</head>
+<body>
+    <header class="w-full">
+        <div class="py-4 bg-slate-200 text-lg flex justify-evenly outline outline-1 outline-slate-300 shadow-sm mb-4">
+            <a href={% url 'pages:home' %}>Home</a>
+            <a href={% url 'pages:about' %}>About</a>
+            <a href={% url 'pages:research' %}>Research</a>
+            <a href={% url 'pages:software' %}>Software</a>
+            <a href={% url 'pages:blog' %}>Blog</a>
+            {% comment %}
+            <a href={% url 'pages:services' %}>Services</a>
+            {% endcomment %}
+            <a href={% url 'pages:contact' %}>Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Main content goes here -->
+        <div class="overflow-y-auto pb-16">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </main>
+
+    <footer class="fixed inset-x-0 bottom-0">
+        {% comment %}
+        Footer content goes here. Let's just put a little copyright 
+        2021-{{current year}} in here 
+        {%  endcomment %} 
+        <div class="py-4 bg-slate-200 text-md flex justify-evenly outline outline-1 outline-slate-300 shadow-sm mt-4">
+            <div x-data="{currentYear: new Date().getFullYear()}">
+                <p>&copy; 2022-<span x-text="currentYear" x-init="currentYear = new Date().getFullYear()">2024</span> Charles Turner</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add your JavaScript files here -->
+    <script src="{% static 'your_app/js/script.js' %}"></script>
+</body>
