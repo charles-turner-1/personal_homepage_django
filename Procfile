@@ -1,1 +1,1 @@
-web: gunicorn cturner.wsg
+web: gunicorn cturner.wsgi
