@@ -8,8 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charles Turner</title>
+
     <!-- Add your CSS files here -->
+    {% comment %}
     <link rel="stylesheet" href="{% static 'your_app/css/style.css' %}">
+    {% endcomment %}
+
     {% tailwind_css %}
 
     <script> 
@@ -57,5 +61,7 @@
     </footer>
 
     <!-- Add your JavaScript files here -->
+    {% comment %}
     <script src="{% static 'your_app/js/script.js' %}"></script>
+    {% endcomment %}
 </body>
