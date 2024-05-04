@@ -17,9 +17,8 @@ RUN npm install
 # Copy the current directory contents into the container at /app
 COPY . /app
 
+# Collect static files
 RUN python manage.py collectstatic --noinput
 
-# For now, lets just use runserver to test the app
+# Run the fucker
 CMD gunicorn cturner.wsgi:application --bind 0.0.0.0:$PORT
-
-
